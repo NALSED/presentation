@@ -6,10 +6,63 @@
 -->
 <html>
 	<head>
-		<title>Candidature</title>
+		<title>Landès Martin — Sysadmin / DevOps</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Badges compétences */
+			.skills-grid {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+				margin-bottom: 1.5em;
+			}
+			.skill-badge {
+				background: #2e3440;
+				color: #88c0d0;
+				border: 1px solid #4c566a;
+				border-radius: 4px;
+				padding: 0.3em 0.8em;
+				font-size: 0.85em;
+				font-family: monospace;
+				font-weight: 600;
+			}
+			.skill-category h4 {
+				color: #5e81ac;
+				margin-bottom: 0.5em;
+				text-transform: uppercase;
+				font-size: 0.8em;
+				letter-spacing: 0.1em;
+			}
+			/* Certifs */
+			.certif-list {
+				list-style: none;
+				padding: 0;
+			}
+			.certif-list li {
+				padding: 0.5em 0;
+				border-bottom: 1px solid #eee;
+				display: flex;
+				align-items: center;
+				gap: 0.8em;
+				font-size: 0.95em;
+			}
+			.badge-ok  { color: #2ecc71; font-size: 1.1em; }
+			.badge-wip { color: #f39c12; font-size: 1.1em; }
+			/* Infra schema */
+			.infra-schema {
+				background: #1e2027;
+				color: #a8d8ea;
+				border-radius: 6px;
+				padding: 1.5em;
+				font-family: monospace;
+				font-size: 0.8em;
+				line-height: 1.8;
+				overflow-x: auto;
+				margin: 1em 0 1.5em 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -18,22 +71,21 @@
 				<header>
 					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Landès Martin</a></h1>
-					<p>Poste Recherchés<br />
-					Alternance : Admin Sys / DevOps</p>
+					<p>Recherche alternance 2027<br />
+					Sysadmin &amp; DevOps</p>
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">Parcours</a></li>
-						<li><a href="#two">HomeLabs</a></li>
-						<li><a href="#three">Compétences</a></li>
+						<li><a href="#one" class="active">Présentation</a></li>
+						<li><a href="#two">Homelab</a></li>
+						<li><a href="#three">Compétences &amp; Certifs</a></li>
 						<li><a href="#four">Contact</a></li>
 					</ul>
 				</nav>
 				<footer>
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-linkdin"><span class="label">Linkdin</span></a></li>
 						<li><a href="https://github.com/NALSED" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="mailto:landes_martin@yahoo.fr" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 				</footer>
 			</section>
@@ -44,7 +96,7 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- One -->
+						<!-- 1 — Présentation -->
 							<section id="one">
 								<div class="image main" data-position="center">
 									<img src="images/banner.jpg" alt="" />
@@ -52,407 +104,208 @@
 								<div class="container">
 									<header class="major">
 										<h2>Présentation</h2>
-										<p>Just an incredibly simple responsive site<br />
-										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>
+										<p>Passionné d'infrastructure et d'automatisation,<br />
+										je recherche une alternance Sysadmin / DevOps pour 2027.</p>
 									</header>
-									<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+									<p>
+										Titulaire du BTS TSSR, je construis et maintiens un homelab complet depuis plusieurs années :
+										infrastructure réseau (pfSense), PKI automatisée (HashiCorp Vault), sauvegarde multi-sites (Bareos),
+										conteneurisation (Docker) et supervision sécurité (Security Onion).
+										Je me prépare actuellement aux certifications RHCSA et CKA (Kubernetes).
+									</p>
+									<p>
+										Ce site tourne sur mon propre serveur, exposé via un tunnel SSH inversé sur un VPS OVH —
+										ile est lui-même une démonstration de ce que je sais faire.
+									</p>
 								</div>
 							</section>
 
-						<!-- Two -->
+						<!-- 2 — Homelab -->
 							<section id="two">
 								<div class="container">
-									<h3>HomeLabs</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<div class="features">
-									<article>
-										<a href="bareos.html" class="image"><img src="images/icons/bareos.png" alt="Bareos" /></a>
-										<div class="inner">
-											<h4>Bareos Backup</h4>
-											<p>Solution de sauvegarde open source. <a href="bareos.html">En savoir plus →</a></p>
-										</div>
-									</article>
-									<article>
-										<a href="docker.html" class="image"><img src="images/icons/docker.png" alt="Docker" /></a>
-										<div class="inner">
-											<h4>Docker</h4>
-											<p>Conteneurisation et orchestration. <a href="docker.html">En savoir plus →</a></p>
-										</div>
-									</article>
-									<article>
-										<a href="vault.html" class="image"><img src="images/icons/vault.png" alt="Vault" /></a>
-										<div class="inner">
-											<h4>HashiCorp Vault</h4>
-											<p>Gestion des secrets et PKI. <a href="vault.html">En savoir plus →</a></p>
-										</div>
-									</article>
-								</div>
-								</div>
-							</section>
+									<h3>Homelab</h3>
+									<p>
+										Infrastructure complète en production sur le réseau <code>sednal.lan</code>.
+										Chaque service est documenté dans mon <a href="https://github.com/NALSED/TUTO" target="_blank">dépôt TUTO</a>.
+									</p>
 
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>A Few Accomplishments</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+									<div class="infra-schema">
+Internet<br />
+&nbsp;&nbsp;&nbsp;&nbsp;│<br />
+&nbsp;&nbsp;&nbsp;&nbsp;▼<br />
+VPS OVH — nalsed.fr (Debian 13)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;├── Nginx reverse proxy<br />
+&nbsp;&nbsp;&nbsp;&nbsp;└── Bareos SD (sauvegarde distante)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;│ tunnel autossh + systemd<br />
+&nbsp;&nbsp;&nbsp;&nbsp;▼<br />
+LAN sednal.lan<br />
+&nbsp;&nbsp;&nbsp;&nbsp;│<br />
+&nbsp;&nbsp;&nbsp;&nbsp;├── pfSense (192.168.0.1) — Firewall · DNS Resolver · DHCP<br />
+&nbsp;&nbsp;&nbsp;&nbsp;├── Vault (vault.sednal.lan) — PKI RSA+ECDSA · Auto-unseal · Cron certs<br />
+&nbsp;&nbsp;&nbsp;&nbsp;├── DNS (192.168.0.241) — Pihole · Unbound<br />
+&nbsp;&nbsp;&nbsp;&nbsp;├── Bareos (192.168.0.240) — RAID1 · PostgreSQL · Client Win<br />
+&nbsp;&nbsp;&nbsp;&nbsp;├── Proxmox (192.168.0.242) — Hyperviseur VMs<br />
+&nbsp;&nbsp;&nbsp;&nbsp;└── Admin (192.168.0.235) — Docker · WSL · Ollama/Deepseek
+									</div>
+
 									<div class="features">
+
 										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank" class="image"><img src="images/icons/vault.png" alt="Vault" /></a>
 											<div class="inner">
-												<h4>Possibly broke spacetime</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>HashiCorp Vault — PKI</h4>
+												<p>Infrastructure PKI complète : double CA Root (RSA + ECDSA), CA intermédiaires, cross-signing, auto-unseal via transit. Génération automatique de certificats pour tous les services du lab via scripts Bash et cron.</p>
+												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank">Voir la documentation →</a>
 											</div>
 										</article>
+
 										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank" class="image"><img src="images/icons/bareos.png" alt="Bareos" /></a>
 											<div class="inner">
-												<h4>Terraformed a small moon</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Bareos — Sauvegarde</h4>
+												<p>Solution de sauvegarde open source montée from scratch sur Debian 13. Serveur avec RAID1 + PostgreSQL, client Windows 11, sauvegarde distante sur VPS OVH. Pools, filesets, schedules configurés et restauration testée.</p>
+												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank">Voir la documentation →</a>
 											</div>
 										</article>
+
 										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank" class="image"><img src="images/icons/docker.png" alt="Docker" /></a>
 											<div class="inner">
-												<h4>Snapped dark matter in the wild</h4>
-												<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+												<h4>Docker</h4>
+												<p>Déploiement de services conteneurisés via Docker Compose, gestion de contexts multi-environnement (Linux + Windows Desktop), scripts d'automatisation.</p>
+												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank">Voir la documentation →</a>
 											</div>
 										</article>
+
+										<article>
+											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank" class="image"><img src="images/icons/pfsense.png" alt="pfSense" /></a>
+											<div class="inner">
+												<h4>pfSense — Réseau</h4>
+												<p>Appliance pfSense SG-1100 en production : firewall, DNS Resolver, DHCP, HAProxy en reverse proxy. Passerelle principale du lab sednal.lan.</p>
+												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank">Voir la documentation →</a>
+											</div>
+										</article>
+
+										<article>
+											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank" class="image"><img src="images/icons/nginx.png" alt="VPS" /></a>
+											<div class="inner">
+												<h4>VPS &amp; Hébergement</h4>
+												<p>Ce site est hébergé en local et exposé via un tunnel SSH inversé (autossh) vers un VPS OVH. Nginx reverse proxy, iptables, service systemd pour persistance au reboot. Architecture DMZ fonctionnelle.</p>
+												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank">Voir la documentation →</a>
+											</div>
+										</article>
+
+										<article>
+											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SECURITY_ONION" target="_blank" class="image"><img src="images/icons/securityonion.png" alt="Security Onion" /></a>
+											<div class="inner">
+												<h4>Security Onion</h4>
+												<p>Déploiement standalone de Security Onion avec stack Elastic intégrée. Supervision et détection d'intrusions sur le réseau du lab.</p>
+												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SECURITY_ONION" target="_blank">Voir la documentation →</a>
+											</div>
+										</article>
+
 									</div>
 								</div>
 							</section>
 
-						
-
-						<!-- Five -->
-						<!--
-							<section id="five">
+						<!-- 3 — Compétences & Certifs -->
+							<section id="three">
 								<div class="container">
-									<h3>Elements</h3>
+									<h3>Compétences &amp; Certifications</h3>
 
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
+									<div class="skill-category">
+										<h4>🐧 Linux &amp; Scripting</h4>
+										<div class="skills-grid">
+											<span class="skill-badge">Debian</span>
+											<span class="skill-badge">RHEL</span>
+											<span class="skill-badge">Bash</span>
+											<span class="skill-badge">systemd</span>
+											<span class="skill-badge">LVM</span>
+											<span class="skill-badge">RAID</span>
+											<span class="skill-badge">Kali Linux</span>
 										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
+									</div>
+
+									<div class="skill-category">
+										<h4>🌐 Réseau &amp; Firewall</h4>
+										<div class="skills-grid">
+											<span class="skill-badge">pfSense</span>
+											<span class="skill-badge">HAProxy</span>
+											<span class="skill-badge">Nginx</span>
+											<span class="skill-badge">DNS / Unbound</span>
+											<span class="skill-badge">Pihole</span>
+											<span class="skill-badge">SSH tunnels</span>
+											<span class="skill-badge">iptables</span>
+											<span class="skill-badge">VPN</span>
 										</div>
-									</section>
+									</div>
 
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
+									<div class="skill-category">
+										<h4>🐳 Conteneurisation</h4>
+										<div class="skills-grid">
+											<span class="skill-badge">Docker</span>
+											<span class="skill-badge">Docker Compose</span>
+											<span class="skill-badge">Docker Desktop</span>
+											<span class="skill-badge">Kubernetes (en cours)</span>
 										</div>
+									</div>
 
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
+									<div class="skill-category">
+										<h4>🔐 Sécurité &amp; PKI</h4>
+										<div class="skills-grid">
+											<span class="skill-badge">HashiCorp Vault</span>
+											<span class="skill-badge">PKI / SSL / TLS</span>
+											<span class="skill-badge">LDAP / AD</span>
+											<span class="skill-badge">Security Onion</span>
+											<span class="skill-badge">OSINT</span>
+											<span class="skill-badge">CTF / HackTheBox</span>
 										</div>
-									</section>
+									</div>
 
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
-
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
+									<div class="skill-category">
+										<h4>💾 Sauvegarde &amp; Stockage</h4>
+										<div class="skills-grid">
+											<span class="skill-badge">Bareos</span>
+											<span class="skill-badge">PostgreSQL</span>
+											<span class="skill-badge">LVM</span>
+											<span class="skill-badge">RAID1</span>
 										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
+									</div>
+
+									<div class="skill-category">
+										<h4>🖥️ Virtualisation</h4>
+										<div class="skills-grid">
+											<span class="skill-badge">Proxmox</span>
+											<span class="skill-badge">WSL</span>
+											<span class="skill-badge">Windows Server 2025</span>
+										</div>
+									</div>
+
+									<hr />
+									<h4>Certifications</h4>
+									<ul class="certif-list">
+										<li><span class="badge-ok">✅</span> <strong>BTS TSSR</strong> — Technicien Supérieur Systèmes et Réseaux</li>
+										<li><span class="badge-wip">🔄</span> <strong>RHCSA</strong> — Red Hat Certified System Administrator <em>(en cours)</em></li>
+										<li><span class="badge-wip">🔄</span> <strong>CKA</strong> — Certified Kubernetes Administrator <em>(en cours)</em></li>
+									</ul>
 
 								</div>
 							</section>
-						-->
+
+						<!-- 4 — Contact -->
+							<section id="four">
+								<div class="container">
+									<h3>Contact</h3>
+									<p>Disponible pour une alternance Sysadmin / DevOps à partir de 2027.<br />
+									N'hésitez pas à me contacter par email ou à explorer mes dépôts GitHub.</p>
+									<ul class="feature-icons">
+										<li class="icon solid fa-envelope"><a href="mailto:landes_martin@yahoo.fr">landes_martin@yahoo.fr</a></li>
+										<li class="icon brands fa-github"><a href="https://github.com/NALSED" target="_blank">github.com/NALSED</a></li>
+										<li class="icon solid fa-code"><a href="https://github.com/NALSED/TUTO" target="_blank">Notes techniques — TUTO</a></li>
+										<li class="icon solid fa-certificate"><a href="https://github.com/NALSED/CERTIF" target="_blank">Préparation certifications — CERTIF</a></li>
+									</ul>
+								</div>
+							</section>
 
 					</div>
 
@@ -460,7 +313,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Landès Martin 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
