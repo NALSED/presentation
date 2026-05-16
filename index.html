@@ -11,7 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Badges compétences */
 			.skills-grid {
 				display: flex;
 				flex-wrap: wrap;
@@ -35,7 +34,6 @@
 				font-size: 0.8em;
 				letter-spacing: 0.1em;
 			}
-			/* Certifs */
 			.certif-list {
 				list-style: none;
 				padding: 0;
@@ -50,7 +48,6 @@
 			}
 			.badge-ok  { color: #2ecc71; font-size: 1.1em; }
 			.badge-wip { color: #f39c12; font-size: 1.1em; }
-			/* Infra schema */
 			.infra-schema {
 				background: #1e2027;
 				color: #a8d8ea;
@@ -66,70 +63,66 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Landès Martin</a></h1>
-					<p>Recherche alternance 2027<br />
-					Sysadmin &amp; DevOps</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">Présentation</a></li>
-						<li><a href="#two">Homelab</a></li>
-						<li><a href="#three">Compétences &amp; Certifs</a></li>
-						<li><a href="#four">Contact</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://github.com/NALSED" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:landes_martin@yahoo.fr" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+		<section id="header">
+			<header>
+				<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+				<h1 id="logo"><a href="#">Landès Martin</a></h1>
+				<p>Recherche alternance 2027<br />
+				Sysadmin &amp; DevOps</p>
+			</header>
+			<nav id="nav">
+				<ul>
+					<li><a href="#one" class="active">Présentation</a></li>
+					<li><a href="#two">Homelab</a></li>
+					<li><a href="#three">Compétences &amp; Certifs</a></li>
+					<li><a href="#four">Contact</a></li>
+				</ul>
+			</nav>
+			<footer>
+				<ul class="icons">
+					<li><a href="https://github.com/NALSED" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="mailto:landes_martin@yahoo.fr" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</footer>
+		</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
+			<div id="main">
 
-				<!-- Main -->
-					<div id="main">
+				<!-- 1 — Présentation -->
+				<section id="one">
+					<div class="image main" data-position="center">
+						<img src="images/banner.jpg" alt="" />
+					</div>
+					<div class="container">
+						<header class="major">
+							<h2>Présentation</h2>
+							<p>Passionné d'infrastructure et d'automatisation,<br />
+							je recherche une alternance Sysadmin / DevOps pour 2027.</p>
+						</header>
+						<p>
+							Titulaire du BTS TSSR, je construis et maintiens un homelab complet depuis plusieurs années :
+							infrastructure réseau (pfSense), PKI automatisée (HashiCorp Vault), sauvegarde multi-sites (Bareos)
+							et conteneurisation (Docker).
+							Je me prépare actuellement aux certifications RHCSA et CKA (Kubernetes).
+						</p>
+						<p>
+							Ce site tourne sur mon propre serveur, exposé via un tunnel SSH inversé sur un VPS OVH —
+							il est lui-même une démonstration de ce que je sais faire.
+						</p>
+					</div>
+				</section>
 
-						<!-- 1 — Présentation -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/banner.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Présentation</h2>
-										<p>Passionné d'infrastructure et d'automatisation,<br />
-										je recherche une alternance Sysadmin / DevOps pour 2027.</p>
-									</header>
-									<p>
-										Titulaire du BTS TSSR, je construis et maintiens un homelab complet depuis plusieurs années :
-										infrastructure réseau (pfSense), PKI automatisée (HashiCorp Vault), sauvegarde multi-sites (Bareos),
-										conteneurisation (Docker) et supervision sécurité (Security Onion).
-										Je me prépare actuellement aux certifications RHCSA et CKA (Kubernetes).
-									</p>
-									<p>
-										Ce site tourne sur mon propre serveur, exposé via un tunnel SSH inversé sur un VPS OVH —
-										ile est lui-même une démonstration de ce que je sais faire.
-									</p>
-								</div>
-							</section>
+				<!-- 2 — Homelab -->
+				<section id="two">
+					<div class="container">
+						<h3>Homelab</h3>
+						<p>
+							Infrastructure complète en production sur le réseau <code>sednal.lan</code>.
+							Chaque service est documenté dans mon <a href="https://github.com/NALSED/TUTO" target="_blank">dépôt TUTO</a>.
+						</p>
 
-						<!-- 2 — Homelab -->
-							<section id="two">
-								<div class="container">
-									<h3>Homelab</h3>
-									<p>
-										Infrastructure complète en production sur le réseau <code>sednal.lan</code>.
-										Chaque service est documenté dans mon <a href="https://github.com/NALSED/TUTO" target="_blank">dépôt TUTO</a>.
-									</p>
-
-									<div class="infra-schema">
+						<div class="infra-schema">
 Internet<br />
 &nbsp;&nbsp;&nbsp;&nbsp;│<br />
 &nbsp;&nbsp;&nbsp;&nbsp;▼<br />
@@ -146,188 +139,176 @@ LAN sednal.lan<br />
 &nbsp;&nbsp;&nbsp;&nbsp;├── Bareos (192.168.0.240) — RAID1 · PostgreSQL · Client Win<br />
 &nbsp;&nbsp;&nbsp;&nbsp;├── Proxmox (192.168.0.242) — Hyperviseur VMs<br />
 &nbsp;&nbsp;&nbsp;&nbsp;└── Admin (192.168.0.235) — Docker · WSL · Ollama/Deepseek
-									</div>
+						</div>
 
-									<div class="features">
+						<div class="features">
 
-										<article>
-											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank" class="image"><img src="images/icons/vault.png" alt="Vault" /></a>
-											<div class="inner">
-												<h4>HashiCorp Vault — PKI</h4>
-												<p>Infrastructure PKI complète : double CA Root (RSA + ECDSA), CA intermédiaires, cross-signing, auto-unseal via transit. Génération automatique de certificats pour tous les services du lab via scripts Bash et cron.</p>
-												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank">Voir la documentation →</a>
-											</div>
-										</article>
-
-										<article>
-											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank" class="image"><img src="images/icons/bareos.png" alt="Bareos" /></a>
-											<div class="inner">
-												<h4>Bareos — Sauvegarde</h4>
-												<p>Solution de sauvegarde open source montée from scratch sur Debian 13. Serveur avec RAID1 + PostgreSQL, client Windows 11, sauvegarde distante sur VPS OVH. Pools, filesets, schedules configurés et restauration testée.</p>
-												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank">Voir la documentation →</a>
-											</div>
-										</article>
-
-										<article>
-											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank" class="image"><img src="images/icons/docker.png" alt="Docker" /></a>
-											<div class="inner">
-												<h4>Docker</h4>
-												<p>Déploiement de services conteneurisés via Docker Compose, gestion de contexts multi-environnement (Linux + Windows Desktop), scripts d'automatisation.</p>
-												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank">Voir la documentation →</a>
-											</div>
-										</article>
-
-										<article>
-											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank" class="image"><img src="images/icons/pfsense.png" alt="pfSense" /></a>
-											<div class="inner">
-												<h4>pfSense — Réseau</h4>
-												<p>Appliance pfSense SG-1100 en production : firewall, DNS Resolver, DHCP, HAProxy en reverse proxy. Passerelle principale du lab sednal.lan.</p>
-												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank">Voir la documentation →</a>
-											</div>
-										</article>
-
-										<article>
-											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank" class="image"><img src="images/icons/nginx.png" alt="VPS" /></a>
-											<div class="inner">
-												<h4>VPS &amp; Hébergement</h4>
-												<p>Ce site est hébergé en local et exposé via un tunnel SSH inversé (autossh) vers un VPS OVH. Nginx reverse proxy, iptables, service systemd pour persistance au reboot. Architecture DMZ fonctionnelle.</p>
-												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank">Voir la documentation →</a>
-											</div>
-										</article>
-
-										<article>
-											<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SECURITY_ONION" target="_blank" class="image"><img src="images/icons/securityonion.png" alt="Security Onion" /></a>
-											<div class="inner">
-												<h4>Security Onion</h4>
-												<p>Déploiement standalone de Security Onion avec stack Elastic intégrée. Supervision et détection d'intrusions sur le réseau du lab.</p>
-												<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SECURITY_ONION" target="_blank">Voir la documentation →</a>
-											</div>
-										</article>
-
-									</div>
+							<article>
+								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank" class="image"><img src="images/icons/vault.png" alt="Vault" /></a>
+								<div class="inner">
+									<h4>HashiCorp Vault — PKI</h4>
+									<p>Infrastructure PKI complète : double CA Root (RSA + ECDSA), CA intermédiaires, cross-signing, auto-unseal via transit. Génération automatique de certificats pour tous les services du lab via scripts Bash et cron.</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank">Voir la documentation →</a>
 								</div>
-							</section>
+							</article>
 
-						<!-- 3 — Compétences & Certifs -->
-							<section id="three">
-								<div class="container">
-									<h3>Compétences &amp; Certifications</h3>
-
-									<div class="skill-category">
-										<h4>🐧 Linux &amp; Scripting</h4>
-										<div class="skills-grid">
-											<span class="skill-badge">Debian</span>
-											<span class="skill-badge">RHEL</span>
-											<span class="skill-badge">Bash</span>
-											<span class="skill-badge">systemd</span>
-											<span class="skill-badge">LVM</span>
-											<span class="skill-badge">RAID</span>
-											<span class="skill-badge">Kali Linux</span>
-										</div>
-									</div>
-
-									<div class="skill-category">
-										<h4>🌐 Réseau &amp; Firewall</h4>
-										<div class="skills-grid">
-											<span class="skill-badge">pfSense</span>
-											<span class="skill-badge">HAProxy</span>
-											<span class="skill-badge">Nginx</span>
-											<span class="skill-badge">DNS / Unbound</span>
-											<span class="skill-badge">Pihole</span>
-											<span class="skill-badge">SSH tunnels</span>
-											<span class="skill-badge">iptables</span>
-											<span class="skill-badge">VPN</span>
-										</div>
-									</div>
-
-									<div class="skill-category">
-										<h4>🐳 Conteneurisation</h4>
-										<div class="skills-grid">
-											<span class="skill-badge">Docker</span>
-											<span class="skill-badge">Docker Compose</span>
-											<span class="skill-badge">Docker Desktop</span>
-											<span class="skill-badge">Kubernetes (en cours)</span>
-										</div>
-									</div>
-
-									<div class="skill-category">
-										<h4>🔐 Sécurité &amp; PKI</h4>
-										<div class="skills-grid">
-											<span class="skill-badge">HashiCorp Vault</span>
-											<span class="skill-badge">PKI / SSL / TLS</span>
-											<span class="skill-badge">LDAP / AD</span>
-											<span class="skill-badge">Security Onion</span>
-											<span class="skill-badge">OSINT</span>
-											<span class="skill-badge">CTF / HackTheBox</span>
-										</div>
-									</div>
-
-									<div class="skill-category">
-										<h4>💾 Sauvegarde &amp; Stockage</h4>
-										<div class="skills-grid">
-											<span class="skill-badge">Bareos</span>
-											<span class="skill-badge">PostgreSQL</span>
-											<span class="skill-badge">LVM</span>
-											<span class="skill-badge">RAID1</span>
-										</div>
-									</div>
-
-									<div class="skill-category">
-										<h4>🖥️ Virtualisation</h4>
-										<div class="skills-grid">
-											<span class="skill-badge">Proxmox</span>
-											<span class="skill-badge">WSL</span>
-											<span class="skill-badge">Windows Server 2025</span>
-										</div>
-									</div>
-
-									<hr />
-									<h4>Certifications</h4>
-									<ul class="certif-list">
-										<li><span class="badge-ok">✅</span> <strong>BTS TSSR</strong> — Technicien Supérieur Systèmes et Réseaux</li>
-										<li><span class="badge-wip">🔄</span> <strong>RHCSA</strong> — Red Hat Certified System Administrator <em>(en cours)</em></li>
-										<li><span class="badge-wip">🔄</span> <strong>CKA</strong> — Certified Kubernetes Administrator <em>(en cours)</em></li>
-									</ul>
-
+							<article>
+								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank" class="image"><img src="images/icons/bareos.png" alt="Bareos" /></a>
+								<div class="inner">
+									<h4>Bareos — Sauvegarde</h4>
+									<p>Solution de sauvegarde open source montée from scratch sur Debian 13. Serveur avec RAID1 + PostgreSQL, client Windows 11, sauvegarde distante sur VPS OVH. Pools, filesets, schedules configurés et restauration testée.</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank">Voir la documentation →</a>
 								</div>
-							</section>
+							</article>
 
-						<!-- 4 — Contact -->
-							<section id="four">
-								<div class="container">
-									<h3>Contact</h3>
-									<p>Disponible pour une alternance Sysadmin / DevOps à partir de 2027.<br />
-									N'hésitez pas à me contacter par email ou à explorer mes dépôts GitHub.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-envelope"><a href="mailto:landes_martin@yahoo.fr">landes_martin@yahoo.fr</a></li>
-										<li class="icon brands fa-github"><a href="https://github.com/NALSED" target="_blank">github.com/NALSED</a></li>
-										<li class="icon solid fa-code"><a href="https://github.com/NALSED/TUTO" target="_blank">Notes techniques — TUTO</a></li>
-										<li class="icon solid fa-certificate"><a href="https://github.com/NALSED/CERTIF" target="_blank">Préparation certifications — CERTIF</a></li>
-									</ul>
+							<article>
+								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank" class="image"><img src="images/icons/docker.png" alt="Docker" /></a>
+								<div class="inner">
+									<h4>Docker</h4>
+									<p>Déploiement de services conteneurisés via Docker Compose, gestion de contexts multi-environnement (Linux + Windows Desktop), scripts d'automatisation.</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank">Voir la documentation →</a>
 								</div>
-							</section>
+							</article>
+
+							<article>
+								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank" class="image"><img src="images/icons/pfsense.png" alt="pfSense" /></a>
+								<div class="inner">
+									<h4>pfSense — Réseau</h4>
+									<p>Appliance pfSense SG-1100 en production : firewall, DNS Resolver, DHCP, HAProxy en reverse proxy. Passerelle principale du lab sednal.lan.</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank">Voir la documentation →</a>
+								</div>
+							</article>
+
+							<article>
+								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank" class="image"><img src="images/icons/nginx.png" alt="VPS" /></a>
+								<div class="inner">
+									<h4>VPS &amp; Hébergement</h4>
+									<p>Ce site est hébergé en local et exposé via un tunnel SSH inversé (autossh) vers un VPS OVH. Nginx reverse proxy, iptables, service systemd pour persistance au reboot. Architecture DMZ fonctionnelle.</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank">Voir la documentation →</a>
+								</div>
+							</article>
+
+						</div>
+					</div>
+				</section>
+
+				<!-- 3 — Compétences & Certifs -->
+				<section id="three">
+					<div class="container">
+						<h3>Compétences &amp; Certifications</h3>
+
+						<div class="skill-category">
+							<h4>🐧 Linux &amp; Scripting</h4>
+							<div class="skills-grid">
+								<span class="skill-badge">Debian</span>
+								<span class="skill-badge">RHEL</span>
+								<span class="skill-badge">Bash</span>
+								<span class="skill-badge">systemd</span>
+								<span class="skill-badge">LVM</span>
+								<span class="skill-badge">RAID</span>
+								<span class="skill-badge">Kali Linux</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4>🌐 Réseau &amp; Firewall</h4>
+							<div class="skills-grid">
+								<span class="skill-badge">pfSense</span>
+								<span class="skill-badge">HAProxy</span>
+								<span class="skill-badge">Nginx</span>
+								<span class="skill-badge">DNS / Unbound</span>
+								<span class="skill-badge">Pihole</span>
+								<span class="skill-badge">SSH tunnels</span>
+								<span class="skill-badge">iptables</span>
+								<span class="skill-badge">VPN</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4>🐳 Conteneurisation</h4>
+							<div class="skills-grid">
+								<span class="skill-badge">Docker</span>
+								<span class="skill-badge">Docker Compose</span>
+								<span class="skill-badge">Docker Desktop</span>
+								<span class="skill-badge">Kubernetes (en cours)</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4>🔐 Sécurité &amp; PKI</h4>
+							<div class="skills-grid">
+								<span class="skill-badge">HashiCorp Vault</span>
+								<span class="skill-badge">PKI / SSL / TLS</span>
+								<span class="skill-badge">LDAP / AD</span>
+								<span class="skill-badge">OSINT</span>
+								<span class="skill-badge">CTF / HackTheBox</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4>💾 Sauvegarde &amp; Stockage</h4>
+							<div class="skills-grid">
+								<span class="skill-badge">Bareos</span>
+								<span class="skill-badge">PostgreSQL</span>
+								<span class="skill-badge">LVM</span>
+								<span class="skill-badge">RAID1</span>
+							</div>
+						</div>
+
+						<div class="skill-category">
+							<h4>🖥️ Virtualisation</h4>
+							<div class="skills-grid">
+								<span class="skill-badge">Proxmox</span>
+								<span class="skill-badge">WSL</span>
+								<span class="skill-badge">Windows Server 2025</span>
+							</div>
+						</div>
+
+						<hr />
+						<h4>Certifications</h4>
+						<ul class="certif-list">
+							<li><span class="badge-ok">✅</span> <strong>BTS TSSR</strong> — Technicien Supérieur Systèmes et Réseaux</li>
+							<li><span class="badge-wip">🔄</span> <strong>RHCSA</strong> — Red Hat Certified System Administrator <em>(en cours)</em></li>
+							<li><span class="badge-wip">🔄</span> <strong>CKA</strong> — Certified Kubernetes Administrator <em>(en cours)</em></li>
+						</ul>
 
 					</div>
+				</section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Landès Martin 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+				<!-- 4 — Contact -->
+				<section id="four">
+					<div class="container">
+						<h3>Contact</h3>
+						<p>Disponible pour une alternance Sysadmin / DevOps à partir de 2027.<br />
+						N'hésitez pas à me contacter par email ou à explorer mes dépôts GitHub.</p>
+						<ul class="feature-icons">
+							<li class="icon solid fa-envelope"><a href="mailto:landes_martin@yahoo.fr">landes_martin@yahoo.fr</a></li>
+							<li class="icon brands fa-github"><a href="https://github.com/NALSED" target="_blank">github.com/NALSED</a></li>
+							<li class="icon solid fa-code"><a href="https://github.com/NALSED/TUTO" target="_blank">Notes techniques — TUTO</a></li>
+							<li class="icon solid fa-certificate"><a href="https://github.com/NALSED/CERTIF" target="_blank">Préparation certifications — CERTIF</a></li>
+						</ul>
+					</div>
+				</section>
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<section id="footer">
+				<div class="container">
+					<ul class="copyright">
+						<li>&copy; Landès Martin 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
