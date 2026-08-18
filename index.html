@@ -48,6 +48,16 @@
 			}
 			.badge-ok  { color: #2ecc71; font-size: 1.1em; }
 			.badge-wip { color: #f39c12; font-size: 1.1em; }
+			.features article .inner {
+				width: 100%;
+				padding-right: 0;
+			}
+			.card-tags {
+				font-family: monospace;
+				font-size: 0.8em;
+				color: #5e81ac;
+				letter-spacing: 0.02em;
+			}
 			.infra-schema {
 				background: #1e2027;
 				color: #a8d8ea;
@@ -118,73 +128,80 @@
 					<div class="container">
 						<h3>Homelab</h3>
 						<p>
-							Infrastructure complète en production sur le réseau <code>sednal.lan</code>.
-							Chaque service est documenté dans mon <a href="https://github.com/NALSED/TUTO" target="_blank">dépôt TUTO</a>.
+							Je fais tourner en autohébergement une infrastructure de sept machines sur mon LAN
+							(<code>sednal.lan</code>), plus un VPS OVH. Elle n'est pas là pour la démonstration :
+							elle héberge ce site, sauvegarde mon poste de travail et délivre les certificats de
+							tous mes services. Chaque brique est documentée au fil de l'eau —
+							138 fiches techniques dans mon <a href="https://github.com/NALSED/TUTO" target="_blank" rel="noopener">dépôt TUTO</a>.
 						</p>
 
-						<div class="infra-schema">
-Internet<br />
-&nbsp;&nbsp;&nbsp;&nbsp;│<br />
-&nbsp;&nbsp;&nbsp;&nbsp;▼<br />
-VPS OVH — nalsed.fr (Debian 13)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;├── Nginx reverse proxy<br />
-&nbsp;&nbsp;&nbsp;&nbsp;└── Bareos SD (sauvegarde distante)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;│ tunnel autossh + systemd<br />
-&nbsp;&nbsp;&nbsp;&nbsp;▼<br />
-LAN sednal.lan<br />
-&nbsp;&nbsp;&nbsp;&nbsp;│<br />
-&nbsp;&nbsp;&nbsp;&nbsp;├── pfSense (192.168.0.1) — Firewall · DNS Resolver · DHCP<br />
-&nbsp;&nbsp;&nbsp;&nbsp;├── Vault (vault.sednal.lan) — PKI RSA+ECDSA · Auto-unseal · Cron certs<br />
-&nbsp;&nbsp;&nbsp;&nbsp;├── DNS (192.168.0.241) — Pihole · Unbound<br />
-&nbsp;&nbsp;&nbsp;&nbsp;├── Bareos (192.168.0.240) — RAID1 · PostgreSQL · Client Win<br />
-&nbsp;&nbsp;&nbsp;&nbsp;├── Proxmox (192.168.0.242) — Hyperviseur VMs<br />
-&nbsp;&nbsp;&nbsp;&nbsp;└── Admin (192.168.0.235) — Docker · WSL · Ollama/Deepseek
-						</div>
+						<pre class="infra-schema">INTERNET
+    │
+    ▼
+┌───────────────────────────────────────────────────────────────────┐
+│ VPS OVH · 176.31.163.227 · nalsed.fr · Debian 13                  │
+│ Nginx reverse proxy  ·  Bareos SD distant — copie hors site       │
+└───────────────────────────────────────────────────────────────────┘
+    ▲
+    │  tunnel SSH inversé — autossh + service systemd
+    │  (aucun port ouvert sur le LAN : pas d'accès au routeur FAI)
+    │
+┌───┴───────────────────────────────────────────────────────────────┐
+│ LAN · sednal.lan                                                  │
+├───────────────────────────────────────────────────────────────────┤
+│ pfSense       192.168.0.1     Firewall · Gateway · DHCP · DNS-1   │
+│ Vault         192.168.0.238   PKI — 4 CA · auto-unseal (transit)  │
+│ Web / CRL     192.168.0.239   Apache2 · publication des CRL       │
+│ Bareos        192.168.0.240   DIR/SD/FD · PostgreSQL · RAID1      │
+│ DNS           192.168.0.241   Pi-hole · Unbound · Cockpit · WOL   │
+│ Proxmox       192.168.0.242   Hyperviseur VMs / conteneurs        │
+│ Poste admin   192.168.0.235   Docker · WSL · Ollama (LLM local)   │
+└───────────────────────────────────────────────────────────────────┘</pre>
 
 						<div class="features">
 
 							<article>
-								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank" class="image"><img src="images/icons/vault.png" alt="Vault" /></a>
 								<div class="inner">
-									<h4>HashiCorp Vault — PKI</h4>
-									<p>Infrastructure PKI complète : double CA Root (RSA + ECDSA), CA intermédiaires, cross-signing, auto-unseal via transit. Génération automatique de certificats pour tous les services du lab via scripts Bash et cron.</p>
-									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank">Voir la documentation →</a>
+									<h4>Une PKI interne qui se renouvelle toute seule</h4>
+									<p>Une dizaine de services du lab tournent en HTTPS. Renouveler leurs certificats à la main tous les 90 jours n'était pas tenable : j'ai monté une autorité de certification interne avec HashiCorp Vault — deux chaînes complètes, RSA et ECDSA, chacune avec sa Root et son intermédiaire, et un cross-signing entre les deux. Environ 950 lignes de Bash pilotées par des timers systemd renouvellent tous les certificats tous les 80 jours et publient les listes de révocation toutes les 24 h. Vault se déverrouille seul au redémarrage, via un moteur transit hébergé sur une autre machine.</p>
+									<p class="card-tags">PKI · TLS · automatisation · cycle de vie des secrets</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VAULT" target="_blank" rel="noopener">Documentation technique &rarr;</a>
 								</div>
 							</article>
 
 							<article>
-								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank" class="image"><img src="images/icons/bareos.png" alt="Bareos" /></a>
 								<div class="inner">
-									<h4>Bareos — Sauvegarde</h4>
-									<p>Solution de sauvegarde open source montée from scratch sur Debian 13. Serveur avec RAID1 + PostgreSQL, client Windows 11, sauvegarde distante sur VPS OVH. Pools, filesets, schedules configurés et restauration testée.</p>
-									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank">Voir la documentation →</a>
+									<h4>Sauvegarde hors site, et restauration testée</h4>
+									<p>Bareos installé from scratch sur Debian : serveur DIR/SD/FD avec son WebUI, base PostgreSQL, RAID1 logiciel pour le stockage local. Un second storage tourne sur le VPS OVH et reçoit une copie hors site à travers le tunnel. Pools, filesets, schedules et jobs écrits à la main pour un client Windows 11 et les serveurs Linux du lab — et surtout restauration vérifiée, parce qu'une sauvegarde qu'on n'a jamais restaurée n'est pas une sauvegarde.</p>
+									<p class="card-tags">Sauvegarde · PostgreSQL · RAID · reprise après incident</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/SAUVEGARDE/BAREOS" target="_blank" rel="noopener">Documentation technique &rarr;</a>
 								</div>
 							</article>
 
 							<article>
-								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank" class="image"><img src="images/icons/docker.png" alt="Docker" /></a>
 								<div class="inner">
-									<h4>Docker</h4>
-									<p>Déploiement de services conteneurisés via Docker Compose, gestion de contexts multi-environnement (Linux + Windows Desktop), scripts d'automatisation.</p>
-									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DOCKERS" target="_blank">Voir la documentation →</a>
+									<h4>Héberger sans avoir la main sur le routeur</h4>
+									<p>Mon FAI ne me donne pas accès au routeur : aucun port ouvrable, donc aucun service exposable depuis le LAN. Je l'ai contourné avec un tunnel SSH inversé — autossh maintenu par un service systemd — entre le serveur local et un VPS OVH, avec Nginx en reverse proxy et iptables côté VPS. Le site que vous lisez passe par ce tunnel. Côté LAN, une appliance pfSense SG-1100 fait firewall, passerelle, DHCP et DNS.</p>
+									<p class="card-tags">Réseau · reverse proxy · pfSense · contrainte réelle contournée</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank" rel="noopener">Documentation technique &rarr;</a>
 								</div>
 							</article>
 
 							<article>
-								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank" class="image"><img src="images/icons/pfsense.png" alt="pfSense" /></a>
 								<div class="inner">
-									<h4>pfSense — Réseau</h4>
-									<p>Appliance pfSense SG-1100 en production : firewall, DNS Resolver, DHCP, HAProxy en reverse proxy. Passerelle principale du lab sednal.lan.</p>
-									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/NETGATE" target="_blank">Voir la documentation →</a>
+									<h4>Résolution DNS interne et filtrage</h4>
+									<p>Pi-hole en frontal pour le filtrage, adossé à Unbound configuré en résolveur récursif : les requêtes du réseau ne partent pas chez un résolveur tiers. La même machine porte le moteur transit qui déverrouille Vault, un agent de sauvegarde Bareos, Cockpit pour l'administration et Upsnap pour allumer les serveurs à distance en Wake-on-LAN.</p>
+									<p class="card-tags">DNS · Unbound · Pi-hole · supervision</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/DNS" target="_blank" rel="noopener">Documentation technique &rarr;</a>
 								</div>
 							</article>
 
 							<article>
-								<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank" class="image"><img src="images/icons/nginx.png" alt="VPS" /></a>
 								<div class="inner">
-									<h4>VPS &amp; Hébergement</h4>
-									<p>Ce site est hébergé en local et exposé via un tunnel SSH inversé (autossh) vers un VPS OVH. Nginx reverse proxy, iptables, service systemd pour persistance au reboot. Architecture DMZ fonctionnelle.</p>
-									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/VPS" target="_blank">Voir la documentation →</a>
+									<h4>Virtualisation et conteneurs</h4>
+									<p>Un hyperviseur Proxmox porte les VMs et conteneurs du lab. Les services applicatifs sont déployés en Docker Compose, avec des contexts Docker pour piloter indifféremment les hôtes Linux et le poste Windows. Ce même poste fait tourner un modèle de langage en local (Ollama + DeepSeek Coder) derrière OpenWebUI.</p>
+									<p class="card-tags">Proxmox · Docker Compose · WSL</p>
+									<a href="https://github.com/NALSED/TUTO/tree/main/PERSO/PROXMOX" target="_blank" rel="noopener">Documentation technique &rarr;</a>
 								</div>
 							</article>
 
