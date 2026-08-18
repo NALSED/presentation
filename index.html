@@ -306,29 +306,32 @@
 						<h4>Certifications</h4>
 
 						<!-- ═══════════════════════════════════════════════════════════════════
-						     BADGES DE CERTIFICATION — ZONE A REMPLIR
+						     BADGES DE CERTIFICATION
 
-						     Quatre emplacements ci-dessous. Pour chacun, DEUX valeurs a coller :
+						     Pour AJOUTER un badge obtenu : dupliquer un bloc
+						     <a class="certif-badge"> et y coller DEUX liens Credly.
 
-						       href="..."   lien de VERIFICATION = la page publique du badge
-						                    Credly : ouvrir le badge > "Partager" > onglet "Lien"
-						                    Ressemble a :
-						                    https://www.credly.com/badges/<identifiant>/public_url
+						       href="..."   page publique du badge, forme canonique :
+						                    https://www.credly.com/badges/<id>/public_url
 
-						       src="..."    lien de l'IMAGE du badge
-						                    Credly : clic droit sur l'image > "Copier l'adresse
-						                    de l'image". Ressemble a :
+						                    Credly propose aussi /email (lien des e-mails de
+						                    notification) et /earner/earned/badge/<id> (vue
+						                    depuis ton compte connecte). Ni l'une ni l'autre
+						                    n'est faite pour un site public : reprendre l'id
+						                    et reconstruire la forme /public_url.
+
+						       src="..."    image du badge :
 						                    https://images.credly.com/size/340x340/images/<id>/image.png
 
-						     ATTENTION : les deux identifiants sont DIFFERENTS. Celui de l'image
-						     designe le modele de badge, pas ton badge personnel : il faut donc
-						     bien copier les deux liens separement, l'un ne se deduit pas de l'autre.
+						                    ATTENTION : cet id est celui du MODELE de badge,
+						                    different de l'id du badge. Les deux liens se
+						                    copient separement, l'un ne se deduit pas de l'autre.
+						                    Deux certifications differentes ne partagent jamais
+						                    le meme id : un doublon = une erreur de copier-coller.
 
-						     Tant que src n'est pas remplace, un badge gris "a venir" s'affiche.
-						     Le site en ligne n'affiche jamais d'image cassee.
-
-						     Ajouter un badge  : dupliquer un bloc <a class="certif-badge">
-						     Retirer un badge  : supprimer tout le bloc <a class="certif-badge">
+						     Pour une certification NON ENCORE OBTENUE : utiliser le bloc
+						     <span class="certif-badge is-wip"> (voir CKA ci-dessous). Pas de
+						     lien, puisque le badge Credly n'existe pas encore.
 						     ═══════════════════════════════════════════════════════════════════ -->
 
 						<div class="certif-badges">
@@ -353,14 +356,12 @@
 								<span>Certified Kubernetes<br />Administrator<br />(en préparation)</span>
 							</span>
 
-							<!-- ─────────────────────── BADGE 3 — CISCO1 ───────────────────────
-							     href = lien de VERIFICATION   |   src = lien de l'IMAGE (.png)
-							-->
+							<!-- ─────────────────────── BADGE 3 — Cisco ─────────────────────── -->
 							<a class="certif-badge"
-							   href="REMPLACER_PAR_LE_LIEN_DE_VERIFICATION"
+							   href="https://www.credly.com/badges/f7ca7bdf-2107-41b3-a9f9-0250c3ffda8b/public_url"
 							   target="_blank" rel="noopener">
-								<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='56' fill='%23eceff4' stroke='%23d8dee9' stroke-width='2'/%3E%3Ctext x='60' y='58' text-anchor='middle' font-family='monospace' font-size='11' fill='%2381889b'%3EBADGE%3C/text%3E%3Ctext x='60' y='74' text-anchor='middle' font-family='monospace' font-size='9' fill='%23a6adbb'%3E%C3%A0 venir%3C/text%3E%3C/svg%3E"
-								     alt="Badge Cisco Networking Academy" />
+								<img src="https://images.credly.com/size/340x340/images/5bdd6a39-3e03-4444-9510-ecff80c9ce79/image.png"
+								     alt="Badge Cisco — Networking Basics" />
 								<span>Networking Basics</span>
 							</a>
 
