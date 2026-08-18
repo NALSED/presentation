@@ -54,6 +54,13 @@
 				height: 120px;
 				object-fit: contain;
 			}
+			.certif-badge.is-wip {
+				opacity: 0.75;
+			}
+			.certif-badge.is-wip span {
+				color: #81889b;
+				font-style: italic;
+			}
 			.certif-badge span {
 				font-family: monospace;
 				font-size: 0.8em;
@@ -125,10 +132,10 @@
 							je recherche une alternance Sysadmin / DevOps pour 2027.</p>
 						</header>
 						<p>
-							Titulaire du BTS TSSR, je construis et maintiens un homelab complet depuis plusieurs années :
-							infrastructure réseau (pfSense), PKI automatisée (HashiCorp Vault), sauvegarde multi-sites (Bareos)
-							et conteneurisation (Docker).
-							Je me prépare actuellement aux certifications RHCSA et CKA (Kubernetes).
+							Titulaire du BTS TSSR et certifié RHCSA, je construis et maintiens un homelab complet depuis
+							plusieurs années : infrastructure réseau (pfSense), PKI automatisée (HashiCorp Vault),
+							sauvegarde multi-sites (Bareos) et conteneurisation (Docker).
+							Je prépare actuellement la certification CKA (Kubernetes).
 						</p>
 						<p>
 							Ce site tourne sur mon propre serveur, exposé via un tunnel SSH inversé sur un VPS OVH —
@@ -335,16 +342,16 @@
 								<span>Red Hat Certified<br />System Administrator<br />(RHCSA)</span>
 							</a>
 
-							<!-- ─────────────────────── BADGE 2 — CKA ───────────────────────
-							     href = lien de VERIFICATION   |   src = lien de l'IMAGE (.png)
+							<!-- ─── BADGE 2 — CKA, en préparation ───────────────────────────────
+							     Pas de lien : le badge Credly n'existera qu'une fois l'examen passé.
+							     Le jour venu, remplacer ce <span class="certif-badge is-wip">
+							     par un bloc <a class="certif-badge"> sur le modèle des autres.
 							-->
-							<a class="certif-badge"
-							   href="REMPLACER_PAR_LE_LIEN_DE_VERIFICATION"
-							   target="_blank" rel="noopener">
-								<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='56' fill='%23eceff4' stroke='%23d8dee9' stroke-width='2'/%3E%3Ctext x='60' y='58' text-anchor='middle' font-family='monospace' font-size='11' fill='%2381889b'%3EBADGE%3C/text%3E%3Ctext x='60' y='74' text-anchor='middle' font-family='monospace' font-size='9' fill='%23a6adbb'%3E%C3%A0 venir%3C/text%3E%3C/svg%3E"
-								     alt="Badge Certified Kubernetes Administrator" />
-								<span>CKA</span>
-							</a>
+							<span class="certif-badge is-wip">
+								<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='55' fill='none' stroke='%23d8dee9' stroke-width='2' stroke-dasharray='6 5'/%3E%3Ctext x='60' y='56' text-anchor='middle' font-family='monospace' font-size='15' font-weight='bold' fill='%235e81ac'%3ECKA%3C/text%3E%3Ctext x='60' y='74' text-anchor='middle' font-family='monospace' font-size='9' fill='%2381889b'%3EEN COURS%3C/text%3E%3C/svg%3E"
+								     alt="Certified Kubernetes Administrator (CKA) — en préparation" />
+								<span>Certified Kubernetes<br />Administrator<br />(en préparation)</span>
+							</span>
 
 							<!-- ─────────────────────── BADGE 3 — CISCO1 ───────────────────────
 							     href = lien de VERIFICATION   |   src = lien de l'IMAGE (.png)
