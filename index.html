@@ -34,20 +34,34 @@
 				font-size: 0.8em;
 				letter-spacing: 0.1em;
 			}
-			.certif-list {
-				list-style: none;
-				padding: 0;
-			}
-			.certif-list li {
-				padding: 0.5em 0;
-				border-bottom: 1px solid #eee;
+			.certif-badges {
 				display: flex;
-				align-items: center;
-				gap: 0.8em;
-				font-size: 0.95em;
+				flex-wrap: wrap;
+				gap: 2.5em;
+				margin-top: 1.5em;
 			}
-			.badge-ok  { color: #2ecc71; font-size: 1.1em; }
-			.badge-wip { color: #f39c12; font-size: 1.1em; }
+			.certif-badge {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.7em;
+				width: 130px;
+				border-bottom: 0;
+			}
+			.certif-badge img {
+				display: block;
+				width: 130px;
+				height: 130px;
+				object-fit: contain;
+			}
+			.certif-badge span {
+				font-family: monospace;
+				font-size: 0.8em;
+				font-weight: 600;
+				letter-spacing: 0.05em;
+				color: #5e81ac;
+				text-align: center;
+			}
 			.features article .inner {
 				width: 100%;
 				padding-right: 0;
@@ -283,11 +297,56 @@
 
 						<hr />
 						<h4>Certifications</h4>
-						<ul class="certif-list">
-							<li><span class="badge-ok">✅</span> <strong>BTS TSSR</strong> — Technicien Supérieur Systèmes et Réseaux</li>
-							<li><span class="badge-wip">🔄</span> <strong>RHCSA</strong> — Red Hat Certified System Administrator <em>(en cours)</em></li>
-							<li><span class="badge-wip">🔄</span> <strong>CKA</strong> — Certified Kubernetes Administrator <em>(en cours)</em></li>
-						</ul>
+
+						<!-- ═══════════════════════════════════════════════════════════════════
+						     BADGES DE CERTIFICATION — ZONE A REMPLIR
+
+						     Deux emplacements ci-dessous. Pour chacun, il y a exactement
+						     DEUX valeurs a remplacer :
+
+						       href="..."   le lien de VERIFICATION (la page publique du badge)
+						                    Credly : ouvrir le badge > "Partager" > onglet "Lien"
+
+						       src="..."    le lien de l'IMAGE du badge
+						                    Credly : clic droit sur l'image > "Copier l'adresse
+						                    de l'image" (l'URL se termine par .png)
+
+						     Tant que src n'est pas remplace, un badge gris "a venir" s'affiche :
+						     rien n'apparait casse sur le site en ligne.
+
+						     Ajouter un 3e badge  : dupliquer un bloc <a class="certif-badge">
+						     Retirer un badge     : supprimer tout le bloc <a class="certif-badge">
+						     ═══════════════════════════════════════════════════════════════════ -->
+
+						<div class="certif-badges">
+
+						<!-- ─────────────────────────── BADGE 1 ───────────────────────────
+						     1. href=""  →  colle ici le LIEN DE VERIFICATION du badge
+						     2. src=""   →  colle ici le LIEN DE L'IMAGE du badge (.png)
+						     3. adapte alt="", le <span> et supprime cette ligne de commentaire
+						-->
+						<a class="certif-badge"
+						   href="REMPLACER_PAR_LE_LIEN_DE_VERIFICATION"
+						   target="_blank" rel="noopener">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='56' fill='%23eceff4' stroke='%23d8dee9' stroke-width='2'/%3E%3Ctext x='60' y='58' text-anchor='middle' font-family='monospace' font-size='11' fill='%2381889b'%3EBADGE%3C/text%3E%3Ctext x='60' y='74' text-anchor='middle' font-family='monospace' font-size='9' fill='%23a6adbb'%3E%C3%A0 venir%3C/text%3E%3C/svg%3E"
+							     alt="Badge RHCSA" />
+							<span>RHCSA</span>
+						</a>
+
+						<!-- ─────────────────────────── BADGE 2 ───────────────────────────
+						     1. href=""  →  colle ici le LIEN DE VERIFICATION du badge
+						     2. src=""   →  colle ici le LIEN DE L'IMAGE du badge (.png)
+						     3. adapte alt="", le <span> et supprime cette ligne de commentaire
+						-->
+						<a class="certif-badge"
+						   href="REMPLACER_PAR_LE_LIEN_DE_VERIFICATION"
+						   target="_blank" rel="noopener">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='56' fill='%23eceff4' stroke='%23d8dee9' stroke-width='2'/%3E%3Ctext x='60' y='58' text-anchor='middle' font-family='monospace' font-size='11' fill='%2381889b'%3EBADGE%3C/text%3E%3Ctext x='60' y='74' text-anchor='middle' font-family='monospace' font-size='9' fill='%23a6adbb'%3E%C3%A0 venir%3C/text%3E%3C/svg%3E"
+							     alt="Badge CKA" />
+							<span>CKA</span>
+						</a>
+
+						</div>
 
 					</div>
 				</section>
